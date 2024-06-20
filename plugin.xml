@@ -1,0 +1,16 @@
+<plugin id="cordova-plugin-custombrowser" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>CustomBrowser</name>
+    <js-module src="www/custombrowser.js" name="CustomBrowser">
+        <clobbers target="customBrowser" />
+    </js-module>
+
+    <platform name="ios">
+        <source-file src="src/ios/CustomBrowser.m" />
+        <framework src="SafariServices.framework" />
+    </platform>
+
+    <platform name="android">
+        <source-file src="src/android/CustomBrowser.java" target-dir="src/com/example/custombrowser" />
+        <dependency id="cordova-plugin-inappbrowser" />
+    </platform>
+</plugin>
